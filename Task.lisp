@@ -77,3 +77,35 @@
 
 (write-line "")
 
+;3
+;Определите функцию, заменяющую в исходном списке все вхождения заданного значения другими
+
+(print "-----TASK 3-----")
+
+(defun rep (lst pattern replaceWith)
+	(
+    	(lambda(head tail)
+    	
+            (cond 
+        		(
+        			(null lst)
+        			nil
+        		)
+        	    (
+        	        (eq head pattern) 
+        		    (cons replaceWith (rep tail pattern replaceWith))
+        		)
+    		    (t
+    		        (cons head (rep tail pattern replaceWith))
+    		    )
+    		)
+    	)
+    	(car lst)(cdr lst)
+	)
+)
+
+;Test cases
+(print (rep '(1 2 3 1 1) 1 'a))
+;(A 2 3 A A) 
+(print (rep '((1 2 3) 4 5 6 1) 1 44))
+;((1 2 3) 4 5 6 44) 
