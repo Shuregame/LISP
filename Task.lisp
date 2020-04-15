@@ -63,14 +63,14 @@
 
 
 
-(write-line "Задача 9 Test 1")
+(write-line "Задача 9")
 ;;; Test 1
 (princ " >> (1 2 3) ")
 (print(list-sublist`(1 2 3)))
 (write-line "")
 (write-line "")
 
-(write-line "Задача 9 Test 1")
+(write-line "Задача 9")
 ;;; Test 2
 (princ " >> (1 2 3 4 5 6 7 8) ")
 (print(list-sublist`(1 2 3 4 5 6 7 8)))
