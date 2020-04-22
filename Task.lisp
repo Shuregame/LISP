@@ -277,3 +277,16 @@
 (print (length_city 'city1 'city2))
 (write-line "")
 (write-line "")
+
+; 28. Определите функцию, вычисляющую, сколько всего атомов в списке (списочной структуре).
+
+(defun atomCnt (l)
+((lambda (last)
+  (cond ((null l) 0)
+    ((atom (car l)) (+ 1 (atomCnt last)))
+    (t (atomCnt last))))
+    (cdr l)); последний = (cdr l)
+    )
+	
+(print(atomCnt '(2 91 3 5)))
+(print(atomCnt '(2 (4) 1 1)))
